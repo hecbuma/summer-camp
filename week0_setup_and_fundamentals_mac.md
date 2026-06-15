@@ -1,72 +1,69 @@
 ---
 layout: default
-title: "Week 0 — Windows"
+title: "Week 0 — Mac"
 ---
 
-# Week 0 — Setup & Fundamentals (Windows)
+# Week 0 — Setup & Fundamentals (Mac)
 
 > Before you write any real code, you need a working machine, a working git habit, and a rough map of what "backend" even means. That's this week. Grind through the setup, do the first-PR exercise at the end, and read the primer. Then you're ready for week one.
 
-This guide is written for **Windows 11**. You'll set up a Linux environment *inside* Windows and do all your real work there — the same environment professional Rails developers use.
+This guide is for **macOS**. If you're on Windows, use the Windows version instead — the commands are different.
 
 ---
 
 ## The mental model
 
-Your laptop runs Windows. But Ruby, Rails, the database, and git are all going to live inside **Ubuntu Linux**, running through something called WSL2. Windows is just the host.
-
-Think of it like this:
+Here's the good news: your Mac is already a Unix machine underneath. The **Terminal** app is a real, professional development environment — the same kind of environment Rails runs on in production. There's no extra layer to install, nothing to emulate. Everything you set up runs natively.
 
 ```
-Windows 11               ← the machine you log into
-  └── WSL2 (Ubuntu)      ← where ALL your dev work happens
-        ├── Ruby + Rails
-        ├── PostgreSQL (the database)
-        └── git
-  └── VS Code            ← runs on Windows, edits files inside Ubuntu
+macOS (Terminal)        ← where ALL your dev work happens
+  ├── Homebrew          ← the tool that installs everything else
+  ├── Ruby + Rails
+  ├── PostgreSQL (the database)
+  └── git
+VS Code                 ← your editor, opens the project directly
 ```
 
-You'll write code in VS Code (on the Windows side), but it reads and runs everything inside Ubuntu. Once it's set up, you won't think about the boundary much.
+When this guide says "run this," it means **in the Terminal app**. Open it now: press `Cmd + Space`, type "Terminal," hit Enter. Keep it open — you'll live in it this week.
 
 ---
 
-## Part 1 — Install WSL2 and Ubuntu
+## Part 1 — Install Homebrew
 
-1. Open **PowerShell as Administrator** (right-click the Start button → "Terminal (Admin)" or "Windows PowerShell (Admin)").
+Homebrew is the package manager for macOS — the tool you'll use to install almost everything else. Installing it also pulls in Apple's Command Line Tools, which include `git`.
 
-2. Run:
-   ```powershell
-   wsl --install
-   ```
-   This installs WSL2 and Ubuntu in one step.
+In the Terminal:
 
-3. **Restart your computer** when it tells you to.
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-4. After restart, Ubuntu opens automatically and asks you to create a **username and password**. This is your Linux user — it's separate from your Windows login. Pick something simple, remember the password (you'll type it for `sudo` commands).
+This takes a few minutes and may ask for your Mac password (you won't see characters as you type — that's normal).
 
-> If Ubuntu doesn't open on its own, find "Ubuntu" in the Start menu and launch it.
+When it finishes, it prints a couple of `Next steps` commands to add Homebrew to your PATH. **On Apple Silicon Macs** (M1/M2/M3/M4), run these:
 
-From now on, when this guide says "run this," it means **inside the Ubuntu terminal**, not PowerShell — unless it explicitly says PowerShell.
+```bash
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+> On older **Intel** Macs, Homebrew installs to a different location and is usually already on your PATH — just follow whatever the installer printed at the end. When this guide later references `/opt/homebrew/...`, an Intel Mac uses `/usr/local/...` instead.
+
+Check it worked:
+
+```bash
+brew --version
+```
 
 ---
 
-## Part 2 — Update Ubuntu and install build tools
-
-In the Ubuntu terminal:
+## Part 2 — Install the libraries Ruby needs
 
 ```bash
-sudo apt update && sudo apt upgrade -y
+brew install openssl@3 libyaml gmp
 ```
 
-Then install the libraries Ruby and the Rails gems need to compile:
-
-```bash
-sudo apt install -y build-essential git curl \
-  libssl-dev libreadline-dev zlib1g-dev libyaml-dev \
-  libffi-dev libgdbm-dev libpq-dev pkg-config
-```
-
-`libpq-dev` is the one that lets Rails talk to PostgreSQL. If you skip it, installing the app later will fail with a `pg` gem error — now you know why.
+These are the libraries Ruby compiles against. `git` is already installed from Part 1.
 
 ---
 
@@ -75,14 +72,14 @@ sudo apt install -y build-essential git curl \
 You won't install Ruby directly. You'll use a **version manager** called `mise` so you can match the exact Ruby version a project needs.
 
 ```bash
-curl https://mise.run | sh
+brew install mise
 ```
 
-Then activate it in your shell (this line tells your terminal to use mise every time it opens):
+Activate it in your shell (macOS uses **zsh** by default, so this goes in `~/.zshrc`):
 
 ```bash
-echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
-source ~/.bashrc
+echo 'eval "$(mise activate zsh)"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 Now install Ruby and Node globally:
@@ -108,47 +105,45 @@ node --version
 PostgreSQL is the database Neta uses.
 
 ```bash
-sudo apt install -y postgresql postgresql-contrib
+brew install postgresql@16
+```
+
+Add its tools to your PATH (this is what lets the `pg` gem and `psql` work):
+
+```bash
+echo 'export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 Start it:
 
 ```bash
-sudo service postgresql start
+brew services start postgresql@16
 ```
 
-**Important:** WSL does not start the database automatically. Every time you open a new terminal session to work, you'll run `sudo service postgresql start` first. If your app suddenly can't connect to the database, this is almost always why.
-
-Now create a database user that matches your Ubuntu username, so Rails can connect without a password locally:
-
-```bash
-sudo -u postgres createuser -s $USER
-```
-
-That's it — Postgres is ready.
+That's it. Unlike some setups, `brew services` keeps PostgreSQL running and **restarts it automatically when you log in** — you don't have to start it by hand every session. Homebrew also creates a database user matching your Mac username, so Rails can connect locally without a password.
 
 ---
 
-## Part 5 — Install VS Code and connect it to WSL
+## Part 5 — Install VS Code
 
-1. On the **Windows side**, download and install VS Code: https://code.visualstudio.com/
+1. Download VS Code from https://code.visualstudio.com/ — it comes as a `.zip`. Open it, then drag **Visual Studio Code** into your **Applications** folder.
 
-2. Open VS Code, go to Extensions (the squares icon on the left), search for **WSL**, and install the extension called "WSL" by Microsoft.
+2. Open VS Code. Press `Cmd + Shift + P` to open the command palette, type **"Shell Command"**, and choose **"Install 'code' command in PATH."**
 
-3. Back in your **Ubuntu terminal**, navigate to where your code will live and open VS Code from there:
+3. Now you can open any project from the Terminal. Try it later with:
    ```bash
    cd ~
    code .
    ```
-   The first time, it installs a small server inside WSL. After that, VS Code opens connected to Ubuntu. You'll see a green box in the bottom-left corner that says something like `WSL: Ubuntu` — that means it's working.
 
-> **The golden rule:** keep all your project files inside the Linux home folder (`~/`). Never put them in `/mnt/c/...` (the Windows drive). Files on the Windows side are *much* slower to work with. If your app feels sluggish, this is the first thing to check.
+Because macOS is already Unix, VS Code edits and runs your project directly — no extra extensions needed to get started.
 
 ---
 
 ## Part 6 — Set up git and GitHub
 
-You already have `git` installed (it came with the build tools). Now configure who you are:
+You already have `git` (it came with the Command Line Tools in Part 1). Configure who you are:
 
 ```bash
 git config --global user.name "Your Name"
@@ -166,12 +161,12 @@ This lets you push code without typing a password every time.
    ssh-keygen -t ed25519 -C "you@example.com"
    ```
 
-2. Print the public key and copy it:
+2. Copy the public key straight to your clipboard:
    ```bash
-   cat ~/.ssh/id_ed25519.pub
+   pbcopy < ~/.ssh/id_ed25519.pub
    ```
 
-3. On GitHub: click your avatar → **Settings** → **SSH and GPG keys** → **New SSH key**. Paste what you copied, give it a name like "ThinkBook WSL," and save.
+3. On GitHub: click your avatar → **Settings** → **SSH and GPG keys** → **New SSH key**. Paste (`Cmd + V`), give it a name like "MacBook," and save.
 
 4. Test it:
    ```bash
@@ -203,10 +198,9 @@ Set up the master key your coach gave you (this unlocks the app's secrets):
 echo "PASTE_THE_KEY_HERE" > config/master.key
 ```
 
-Make sure Postgres is running, then create and seed the database:
+PostgreSQL is already running from Part 4, so create and seed the database:
 
 ```bash
-sudo service postgresql start
 bin/rails db:setup
 ```
 
@@ -222,7 +216,7 @@ Open your browser to **http://localhost:3000**. You should see Neta. If you do �
 
 ## Part 8 — Copy the project board and link your fork
 
-All the work you'll do this summer lives as tickets on a GitHub Project board. Your coach has a master board with every ticket on it. You're going to make your **own copy** so your progress stays yours, separate from the other student's.
+All the work you'll do this summer lives as tickets on a GitHub Project board. Your coach has a master board with every ticket on it. You're going to make your **own copy** so your progress stays yours, separate from the other students'.
 
 ### Copy the master board
 
@@ -244,8 +238,6 @@ The tickets arrive as **draft issues** — notes that live only on the board. Wh
 3. When it asks which repository, choose **your fork of Neta**.
 
 That's it — the draft becomes a real issue in your repository. Do this one ticket at a time, as you pick up work. Don't convert everything at once; convert a ticket when you start it. That way your board always shows, at a glance, what's still a plan versus what you're actually building.
-
-> Why this matters: your board and your issues are isolated from the other student's. You move at your own pace, and your coach can look at either board independently to see where each of you is.
 
 ---
 
@@ -297,29 +289,32 @@ Don't try to memorize this. It's a map so you recognize the territory when you w
 
 ## Quick troubleshooting
 
-**The app can't connect to the database.**
-Postgres isn't running. Run `sudo service postgresql start`.
-
-**Everything feels slow.**
-Your project is probably on the Windows drive (`/mnt/c/...`). Move it into your Linux home (`~/`).
+**`brew: command not found`.**
+Homebrew isn't on your PATH. Run the `eval "$(/opt/homebrew/bin/brew shellenv)"` line from Part 1 (Intel Macs: `/usr/local/bin/brew`).
 
 **`bundle install` fails on the `pg` gem.**
-`libpq-dev` is missing. Run the install command in Part 2 again.
+PostgreSQL's tools aren't on your PATH. Re-run the `export PATH` line in Part 4, then `source ~/.zshrc`, and try again.
 
-**A command says "permission denied" or wants you to use `sudo` for gems.**
-Don't `sudo` Ruby or gem commands. If that's happening, your Ruby version manager isn't active — close and reopen the terminal, or re-run the mise activation step in Part 3.
+**`code: command not found`.**
+Open VS Code, press `Cmd + Shift + P`, and run "Install 'code' command in PATH."
 
-**Git push asks for a password.**
-Your SSH key isn't set up or wasn't added to GitHub. Redo Part 6.
+**A command wants you to use `sudo` for gems, or says "permission denied."**
+Don't `sudo` Ruby or gem commands. If that's happening, mise isn't active — open a new Terminal tab, or re-run the activate step in Part 3.
+
+**The app can't connect to the database.**
+Make sure Postgres is running: `brew services start postgresql@16`.
+
+**Git or `xcode-select` errors about missing tools.**
+Run `xcode-select --install` and accept the prompt.
 
 ---
 
 ## You're done with Week 0 when:
 
-- [ ] Ubuntu runs and you can open a terminal in it
+- [ ] Terminal works and Homebrew is installed (`brew --version`)
 - [ ] `ruby --version` and `node --version` both work
-- [ ] PostgreSQL starts and you created your user
-- [ ] VS Code opens connected to WSL (green corner badge)
+- [ ] PostgreSQL is running via `brew services`
+- [ ] VS Code opens from the Terminal with `code .`
 - [ ] Your SSH key is on GitHub and `ssh -T git@github.com` greets you
 - [ ] Neta runs at localhost:3000
 - [ ] You copied the project board to your own account (with draft issues)

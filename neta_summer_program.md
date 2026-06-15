@@ -62,7 +62,7 @@ A runway week. Before you can hit the ground running, you need ground to run on:
 
 The work is still task-first. You're not reading about git, you're *doing* a real pull request. You're not studying environments, you're standing one up.
 
-> **Your full step-by-step guide is the companion handout, _Week 0 — Setup & Fundamentals_.** It walks through every command for Windows. This section is the overview; that handout is what you actually follow.
+> **Your full step-by-step guide is the companion handout, _Week 0 — Setup & Fundamentals_.** There's a version for Mac and one for Windows — follow the one that matches your machine. This section is the overview; that handout is what you actually follow.
 
 ### What you'll do
 
