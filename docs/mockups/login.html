@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neta — Sign in</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            parchment:     '#F5F0E8',
+            ink:           '#1C1C1C',
+            sienna:        '#C4622D',
+            taupe:         '#8C7B6B',
+            'taupe-light': '#D6CEC4',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans:  ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #F5F0E8; }
+    input[type="email"]:focus {
+      outline: none;
+      border-color: #C4622D;
+      box-shadow: 0 0 0 2px rgba(196, 98, 45, 0.15);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center px-4 py-16">
+
+  <!-- Wordmark -->
+  <div class="mb-12 text-center">
+    <h1 class="font-serif text-5xl text-ink tracking-tight">neta</h1>
+    <p class="font-sans text-taupe text-sm mt-2 tracking-widest uppercase">The real signal.</p>
+  </div>
+
+  <!-- Card -->
+  <div class="w-full max-w-md bg-white/60 backdrop-blur-sm rounded-2xl px-8 py-10 shadow-sm border border-taupe-light">
+
+    <div class="mb-8 text-center">
+      <h2 class="font-serif text-2xl text-ink">Sign in</h2>
+      <p class="font-sans text-sm text-taupe mt-2 leading-relaxed">
+        No password. We'll email you a link.
+      </p>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-8">
+      <label class="block font-sans text-xs text-taupe uppercase tracking-widest mb-2">Your email</label>
+      <div class="relative">
+        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-taupe">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </span>
+        <input
+          type="email"
+          placeholder="you@example.com"
+          class="w-full font-sans text-sm text-ink bg-parchment border border-taupe-light rounded-xl pl-10 pr-4 py-3 transition-all"
+        />
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <a href="login_sent.html">
+      <button class="w-full bg-sienna hover:bg-[#b0571f] transition-colors text-parchment font-sans font-medium text-sm rounded-xl py-4 tracking-wide">
+        Email me a sign-in link
+      </button>
+    </a>
+
+  </div>
+
+  <!-- Footer note -->
+  <p class="font-sans text-xs text-taupe mt-8 text-center max-w-xs leading-relaxed">
+    First time here? Same flow — the link creates your account.
+  </p>
+
+</body>
+</html>

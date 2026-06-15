@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neta — Sign-in email</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            parchment:     '#F5F0E8',
+            ink:           '#1C1C1C',
+            sienna:        '#C4622D',
+            taupe:         '#8C7B6B',
+            'taupe-light': '#D6CEC4',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans:  ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #E8E2D8; } /* slightly darker to read as "email client" backdrop */
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center px-4 py-16">
+
+  <!-- Context label (not part of the email) -->
+  <p class="font-sans text-xs text-taupe uppercase tracking-widest mb-4">Email template · sign-in link</p>
+
+  <!-- Email body -->
+  <div class="w-full max-w-md bg-parchment rounded-2xl overflow-hidden shadow-sm border border-taupe-light">
+
+    <!-- Email header -->
+    <div class="px-8 pt-10 pb-6 text-center border-b border-taupe-light">
+      <h1 class="font-serif text-3xl text-ink tracking-tight">neta</h1>
+    </div>
+
+    <!-- Email content -->
+    <div class="px-8 py-8 text-center">
+      <h2 class="font-serif text-xl text-ink">Your sign-in link</h2>
+      <p class="font-sans text-sm text-taupe mt-3 leading-relaxed">
+        Click below to sign in. No password needed.
+      </p>
+
+      <a href="account.html" class="inline-block mt-6 bg-sienna hover:bg-[#b0571f] transition-colors text-parchment font-sans font-medium text-sm rounded-xl px-8 py-3.5 tracking-wide">
+        Sign in to Neta
+      </a>
+
+      <p class="font-sans text-xs text-taupe mt-6 leading-relaxed">
+        This link works once and expires in 15 minutes.<br/>
+        If you didn't request it, ignore this email — nothing happens.
+      </p>
+    </div>
+
+    <!-- Email footer -->
+    <div class="px-8 py-5 bg-white/40 border-t border-taupe-light text-center">
+      <p class="font-serif italic text-taupe text-sm">neta</p>
+      <p class="font-sans text-[10px] text-taupe mt-1 tracking-wide">The real signal.</p>
+    </div>
+
+  </div>
+
+  <p class="font-sans text-xs text-taupe mt-6 text-center max-w-sm leading-relaxed">
+    Note for implementation: plain HTML email, inline styles, system font fallbacks. This mockup shows intent, not email-safe markup.
+  </p>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neta — Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            parchment:     '#F5F0E8',
+            ink:           '#1C1C1C',
+            sienna:        '#C4622D',
+            taupe:         '#8C7B6B',
+            'taupe-light': '#D6CEC4',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans:  ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #F5F0E8; }
+    .filter-btn { transition: all 0.15s ease; }
+    .filter-btn.active { background-color: #1C1C1C; color: #F5F0E8; border-color: #1C1C1C; }
+    .filter-btn:not(.active):hover { border-color: #8C7B6B; }
+    th { font-weight: 400; }
+  </style>
+</head>
+<body class="min-h-screen px-4 py-10">
+
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-8">
+      <div class="flex items-baseline gap-3">
+        <h1 class="font-serif text-3xl text-ink">neta</h1>
+        <span class="font-sans text-xs text-taupe uppercase tracking-widest border border-taupe-light rounded px-2 py-0.5">Admin</span>
+      </div>
+      <p class="font-sans text-xs text-taupe">Internal · hypothesis validation</p>
+    </div>
+
+    <!-- Stat strip -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+      <div class="bg-white/60 rounded-2xl px-5 py-4 border border-taupe-light">
+        <span class="font-sans text-xs text-taupe uppercase tracking-widest">Decisions tracked</span>
+        <p class="font-serif text-3xl text-ink mt-1">23<span class="font-sans text-sm text-taupe"> / 30</span></p>
+      </div>
+      <div class="bg-white/60 rounded-2xl px-5 py-4 border border-taupe-light">
+        <span class="font-sans text-xs text-taupe uppercase tracking-widest">Satisfied</span>
+        <p class="font-serif text-3xl text-ink mt-1">74%</p>
+      </div>
+      <div class="bg-white/60 rounded-2xl px-5 py-4 border border-taupe-light">
+        <span class="font-sans text-xs text-taupe uppercase tracking-widest">Gems that delivered</span>
+        <p class="font-serif text-3xl text-ink mt-1">6<span class="font-sans text-sm text-taupe"> / 7</span></p>
+      </div>
+      <div class="bg-white/60 rounded-2xl px-5 py-4 border border-sienna/40">
+        <span class="font-sans text-xs text-sienna uppercase tracking-widest">Scoring anomalies</span>
+        <p class="font-serif text-3xl text-sienna mt-1">3</p>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="flex flex-wrap items-center gap-2 mb-4">
+      <button class="filter-btn active font-sans text-xs border border-taupe-light rounded-lg px-3 py-1.5">All</button>
+      <button class="filter-btn font-sans text-xs text-taupe border border-taupe-light rounded-lg px-3 py-1.5">Hungry now</button>
+      <button class="filter-btn font-sans text-xs text-taupe border border-taupe-light rounded-lg px-3 py-1.5">Planning</button>
+      <button class="filter-btn font-sans text-xs text-taupe border border-taupe-light rounded-lg px-3 py-1.5">With feedback</button>
+      <button class="filter-btn font-sans text-xs text-taupe border border-taupe-light rounded-lg px-3 py-1.5">Anomalies only</button>
+      <div class="ml-auto">
+        <input type="text" placeholder="Search venue…" class="font-sans text-xs text-ink bg-white/60 border border-taupe-light rounded-lg px-3 py-1.5 focus:outline-none focus:border-sienna" />
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="bg-white/60 backdrop-blur-sm rounded-2xl border border-taupe-light overflow-hidden mb-10">
+      <table class="w-full font-sans text-sm">
+        <thead>
+          <tr class="border-b border-taupe-light text-left">
+            <th class="font-sans text-xs text-taupe uppercase tracking-widest px-5 py-3">Venue</th>
+            <th class="font-sans text-xs text-taupe uppercase tracking-widest px-3 py-3">Rank</th>
+            <th class="font-sans text-xs text-taupe uppercase tracking-widest px-3 py-3 text-right">Craft</th>
+            <th class="font-sans text-xs text-taupe uppercase tracking-widest px-3 py-3 text-right">Hype</th>
+            <th class="font-sans text-xs text-taupe uppercase tracking-widest px-3 py-3 text-right">Inflation</th>
+            <th class="font-sans text-xs text-taupe uppercase tracking-widest px-3 py-3">Mode</th>
+            <th class="font-sans text-xs text-taupe uppercase tracking-widest px-3 py-3">Feedback</th>
+            <th class="font-sans text-xs text-taupe uppercase tracking-widest px-5 py-3">Scored</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-taupe-light/60">
+
+          <tr class="hover:bg-parchment/60 transition-colors">
+            <td class="px-5 py-3.5"><span class="font-serif text-ink">El Califa de León</span></td>
+            <td class="px-3 py-3.5"><span class="text-[10px] text-taupe uppercase tracking-widest">Hidden gem</span></td>
+            <td class="px-3 py-3.5 text-right text-ink">91</td>
+            <td class="px-3 py-3.5 text-right text-taupe">38</td>
+            <td class="px-3 py-3.5 text-right text-ink font-medium">−53</td>
+            <td class="px-3 py-3.5 text-taupe text-xs">Hungry</td>
+            <td class="px-3 py-3.5"><span class="text-xs text-parchment bg-ink rounded px-2 py-0.5">Satisfied</span></td>
+            <td class="px-5 py-3.5 text-taupe text-xs">2d ago</td>
+          </tr>
+
+          <tr class="hover:bg-parchment/60 transition-colors">
+            <td class="px-5 py-3.5"><span class="font-serif text-ink">Contramar</span></td>
+            <td class="px-3 py-3.5"><span class="text-[10px] text-taupe uppercase tracking-widest">Best bet</span></td>
+            <td class="px-3 py-3.5 text-right text-ink">87</td>
+            <td class="px-3 py-3.5 text-right text-taupe">24</td>
+            <td class="px-3 py-3.5 text-right text-ink font-medium">−63</td>
+            <td class="px-3 py-3.5 text-taupe text-xs">Planning</td>
+            <td class="px-3 py-3.5"><span class="text-xs text-parchment bg-ink rounded px-2 py-0.5">Satisfied</span></td>
+            <td class="px-5 py-3.5 text-taupe text-xs">5d ago</td>
+          </tr>
+
+          <!-- Anomaly: high inflation but satisfied -->
+          <tr class="hover:bg-parchment/60 transition-colors bg-sienna/5">
+            <td class="px-5 py-3.5">
+              <div class="flex items-center gap-2">
+                <span class="font-serif text-ink">Pujol</span>
+                <span class="text-[10px] text-sienna uppercase tracking-widest border border-sienna/30 rounded px-1.5 py-0.5">Anomaly</span>
+              </div>
+            </td>
+            <td class="px-3 py-3.5"><span class="text-[10px] text-taupe uppercase tracking-widest">Risky</span></td>
+            <td class="px-3 py-3.5 text-right text-ink">72</td>
+            <td class="px-3 py-3.5 text-right text-sienna">89</td>
+            <td class="px-3 py-3.5 text-right text-sienna font-medium">+17</td>
+            <td class="px-3 py-3.5 text-taupe text-xs">Planning</td>
+            <td class="px-3 py-3.5"><span class="text-xs text-parchment bg-ink rounded px-2 py-0.5">Satisfied</span></td>
+            <td class="px-5 py-3.5 text-taupe text-xs">8d ago</td>
+          </tr>
+
+          <!-- Anomaly: negative inflation but unsatisfied -->
+          <tr class="hover:bg-parchment/60 transition-colors bg-sienna/5">
+            <td class="px-5 py-3.5">
+              <div class="flex items-center gap-2">
+                <span class="font-serif text-ink">Fonda Margarita</span>
+                <span class="text-[10px] text-sienna uppercase tracking-widest border border-sienna/30 rounded px-1.5 py-0.5">Anomaly</span>
+              </div>
+            </td>
+            <td class="px-3 py-3.5"><span class="text-[10px] text-taupe uppercase tracking-widest">Hidden gem</span></td>
+            <td class="px-3 py-3.5 text-right text-ink">84</td>
+            <td class="px-3 py-3.5 text-right text-taupe">31</td>
+            <td class="px-3 py-3.5 text-right text-ink font-medium">−53</td>
+            <td class="px-3 py-3.5 text-taupe text-xs">Hungry</td>
+            <td class="px-3 py-3.5"><span class="text-xs text-taupe border border-taupe-light rounded px-2 py-0.5">Not satisfied</span></td>
+            <td class="px-5 py-3.5 text-taupe text-xs">12d ago</td>
+          </tr>
+
+          <tr class="hover:bg-parchment/60 transition-colors">
+            <td class="px-5 py-3.5"><span class="font-serif text-ink">Taquería Orinoco</span></td>
+            <td class="px-3 py-3.5"><span class="text-[10px] text-taupe uppercase tracking-widest">Best bet</span></td>
+            <td class="px-3 py-3.5 text-right text-ink">78</td>
+            <td class="px-3 py-3.5 text-right text-taupe">52</td>
+            <td class="px-3 py-3.5 text-right text-ink font-medium">−26</td>
+            <td class="px-3 py-3.5 text-taupe text-xs">Hungry</td>
+            <td class="px-3 py-3.5"><span class="text-xs text-taupe">Pending</span></td>
+            <td class="px-5 py-3.5 text-taupe text-xs">1d ago</td>
+          </tr>
+
+          <tr class="hover:bg-parchment/60 transition-colors">
+            <td class="px-5 py-3.5"><span class="font-serif text-ink">Rosetta</span></td>
+            <td class="px-3 py-3.5"><span class="text-[10px] text-taupe uppercase tracking-widest">Best bet</span></td>
+            <td class="px-3 py-3.5 text-right text-ink">88</td>
+            <td class="px-3 py-3.5 text-right text-sienna">71</td>
+            <td class="px-3 py-3.5 text-right text-ink font-medium">−17</td>
+            <td class="px-3 py-3.5 text-taupe text-xs">Planning</td>
+            <td class="px-3 py-3.5"><span class="text-xs text-parchment bg-ink rounded px-2 py-0.5">Satisfied</span></td>
+            <td class="px-5 py-3.5 text-taupe text-xs">15d ago · stale</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Scoring health note -->
+    <div class="bg-white/40 rounded-2xl px-6 py-5 border border-taupe-light">
+      <span class="font-sans text-xs text-sienna uppercase tracking-widest">Scoring health</span>
+      <p class="font-sans text-sm text-taupe mt-2 leading-relaxed max-w-2xl">
+        Anomalies are venues where the inflation index disagrees with real feedback — a risky pick that satisfied, or a hidden gem that didn't.
+        Three or more anomalies in the same direction suggests the prompt is miscalibrated, not the diner.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-10 text-center">
+      <p class="font-serif italic text-taupe text-sm">neta</p>
+    </div>
+
+  </div>
+</body>
+</html>

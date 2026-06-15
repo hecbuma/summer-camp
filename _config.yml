@@ -1,0 +1,18 @@
+title: Neta Summer Camp
+description: A hands-on Rails apprenticeship — handbook, setup guide, and design reference.
+
+# Treat every page as a styled doc unless it says otherwise.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Keep the source markdown and scaffolding out of the built site.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+markdown: kramdown
