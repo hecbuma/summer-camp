@@ -123,17 +123,3 @@ From never having written a line of code, you've reached the point of shipping a
 Next time around, you're ready to start picking up real backlog tickets from the main program, slowly and with review. For now, enjoy the fact that you can open a Rails app and actually know what you're looking at.
 
 ---
-
-## For the coach
-
-Notes for running Rails Fundamentals, kept separate from the learner-facing material above.
-
-**This lane assumes Foundations is solid.** The scaffold "just works," which is exactly the risk — a learner can run four commands and have an app without understanding any of it. Module 2 (taking it apart) is where the real learning is; don't let them skip it because the app already runs. If they can't trace a request through route → controller → model → view, stay on Module 2.
-
-**The scaffold app is deliberately disposable.** `place_book` exists to be looked at, not maintained. Its job is to make the five Rails pieces concrete before they see Neta's hand-written versions. Once Module 2 lands, it's served its purpose.
-
-**Reintroduce AI carefully.** This is the lane where AI tools come back on, because the learner can now read code. Make the deal explicit: it's for looking things up and explaining, not generating code they can't account for. Watch for pasted code they can't explain — that's the signal to slow down.
-
-**Module 3 is the merge point.** The scavenger hunt and first tiny PR are deliberately the same shape as Phase 0 in the main program, just with far more support. When they're comfortable there, they're ready to start picking up real backlog tickets, slowly, with review.
-
-**They're a minor.** As in Foundations — GitHub is fine at 15, but keep a parent aware they're in the program, and keep everything they touch age-appropriate.

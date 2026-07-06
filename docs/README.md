@@ -246,7 +246,7 @@ Real tickets, not busywork. Pick these up on Neta if you move through a horizon 
 ---
 
 
-## For the coach
+## For the coach ruby
 
 Notes for running Lane 0, kept separate from the learner-facing material above.
 
@@ -261,3 +261,18 @@ Notes for running Lane 0, kept separate from the learner-facing material above.
 **They're a minor.** GitHub accounts are allowed at 13+, so 15 is fine, but make sure a parent or guardian knows they're in the program and using GitHub. Keep everything they touch age-appropriate and public-facing-safe.
 
 **The merge point.** Module 7 is where Lane 0 rejoins the main road — the scavenger hunt and first tiny PR are deliberately the same shape as Phase 0 in the main program, just with far more support. When they're comfortable there, they're ready to start picking up real backlog tickets, slowly, with review.
+
+## For the coach rails
+
+Notes for running Rails Fundamentals, kept separate from the learner-facing material above.
+
+**This lane assumes Foundations is solid.** The scaffold "just works," which is exactly the risk — a learner can run four commands and have an app without understanding any of it. Module 2 (taking it apart) is where the real learning is; don't let them skip it because the app already runs. If they can't trace a request through route → controller → model → view, stay on Module 2.
+
+**The scaffold app is deliberately disposable.** `place_book` exists to be looked at, not maintained. Its job is to make the five Rails pieces concrete before they see Neta's hand-written versions. Once Module 2 lands, it's served its purpose.
+
+**Reintroduce AI carefully.** This is the lane where AI tools come back on, because the learner can now read code. Make the deal explicit: it's for looking things up and explaining, not generating code they can't account for. Watch for pasted code they can't explain — that's the signal to slow down.
+
+**Module 3 is the merge point.** The scavenger hunt and first tiny PR are deliberately the same shape as Phase 0 in the main program, just with far more support. When they're comfortable there, they're ready to start picking up real backlog tickets, slowly, with review.
+
+**They're a minor.** As in Foundations — GitHub is fine at 15, but keep a parent aware they're in the program, and keep everything they touch age-appropriate.
+

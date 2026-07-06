@@ -306,19 +306,3 @@ That's the Foundations lane. If you got here, you've gone from never having writ
 You're not going to jump straight into the big Neta codebase yet. Next you'll build a tiny Rails app of your own — from nothing, working, in one sitting — so Rails stops being a concept and becomes something your hands have done. That's the **Rails Fundamentals** lane. Head there when you're ready.
 
 ---
-
-## For the coach
-
-Notes for running Lane 0, kept separate from the learner-facing material above.
-
-**Protect momentum above all.** This learner is the most fragile to early discouragement. Celebrate the small wins loudly and genuinely — a working guessing game is a real milestone at this stage. The fastest way to lose them is a stretch of unexplained red errors, so stay close early.
-
-**Higher-touch than the other lanes.** Expect shorter, more frequent check-ins than the once-a-week rhythm the others get, and be ready for a bit of the light pairing you were hoping to avoid — especially around modules 6 and 7, where you're the one starting Neta and guiding the first change. That hands-on presence is the point here, not a failure of the model.
-
-**LLMs off, then on — and mean it.** The "turn the AI off" instruction in the learner intro is the single most important rule in this lane. A beginner with an LLM produces working code they understand zero percent of, and *feels* like they learned. Hold the line through module 5 at least. Reintroduce AI tools deliberately once they can read and reason about code on their own — and when you do, make the deal explicit: it's for building on understanding, not replacing it.
-
-**No fixed endpoint.** This lane is self-paced and doesn't have to reach any particular module by summer's end. Getting solidly through, say, module 4 with real understanding beats rushing to module 7 with none. Let the pace be theirs.
-
-**They're a minor.** GitHub accounts are allowed at 13+, so 15 is fine, but make sure a parent or guardian knows they're in the program and using GitHub. Keep everything they touch age-appropriate and public-facing-safe.
-
-**Hands off to Rails Fundamentals.** Lane 0 ends at "From Ruby to the web" — they understand Ruby and grasp what Rails is, but haven't built anything Rails yet. The next lane, **Rails Fundamentals**, is where they build a working scaffold app and then make their first change to Neta. Keep the two lanes in order: Foundations first, Rails Fundamentals second. Don't rush a learner into Rails before the Ruby underneath is solid — a shaky module 5 (methods and objects) makes Rails feel like magic instead of recognition.
