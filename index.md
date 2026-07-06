@@ -17,6 +17,12 @@ title: Home
     <p>The full arc — Week 0 through the capstone, the ticket backlog, the concept maps, and how the whole thing runs.</p>
   </a>
 
+  <a class="card" href="{{ '/setup.html' | relative_url }}">
+    <span class="num">Start here</span>
+    <h3>Week 0 — Setup</h3>
+    <p>Get your machine ready — Mac or Windows. Ruby, Rails, Postgres, git, and your first pull request, step by step.</p>
+  </a>
+
   <div class="group-card">
     <span class="num">Total beginner? Start here</span>
     <h3>Fundamentals</h3>
@@ -40,15 +46,11 @@ title: Home
     </div>
   </div>
 
-  <a class="card" href="{{ '/setup.html' | relative_url }}">
-    <span class="num">Start here</span>
-    <h3>Week 0 — Setup</h3>
-    <p>Get your machine ready — Mac or Windows. Ruby, Rails, Postgres, git, and your first pull request, step by step.</p>
-  </a>
-
-  <a class="card full" href="{{ '/mockups.html' | relative_url }}">
-    <span class="num">Design reference</span>
-    <h3>Mockups</h3>
+  <a class="card full compact" href="{{ '/mockups.html' | relative_url }}">
+    <div class="compact-head">
+      <span class="num">Design reference</span>
+      <h3>Mockups</h3>
+    </div>
     <p>The reference designs for the Phase 1 tickets — login, account, and admin — in the Neta visual language. Build your own version if you can defend it.</p>
   </a>
 
