@@ -244,3 +244,20 @@ Real tickets, not busywork. Pick these up on Neta if you move through a horizon 
 **NETA-044 · Email digest** — weekly email showing a user's recommendation history and accuracy rate. How often did Neta get it right? Mailer + background job + a stats query.
 
 ---
+
+
+## For the coach
+
+Notes for running Lane 0, kept separate from the learner-facing material above.
+
+**Protect momentum above all.** This learner is the most fragile to early discouragement. Celebrate the small wins loudly and genuinely — a working guessing game is a real milestone at this stage. The fastest way to lose them is a stretch of unexplained red errors, so stay close early.
+
+**Higher-touch than the other lanes.** Expect shorter, more frequent check-ins than the once-a-week rhythm the others get, and be ready for a bit of the light pairing you were hoping to avoid — especially around modules 6 and 7, where you're the one starting Neta and guiding the first change. That hands-on presence is the point here, not a failure of the model.
+
+**LLMs off, then on — and mean it.** The "turn the AI off" instruction in the learner intro is the single most important rule in this lane. A beginner with an LLM produces working code they understand zero percent of, and *feels* like they learned. Hold the line through module 5 at least. Reintroduce AI tools deliberately once they can read and reason about code on their own — and when you do, make the deal explicit: it's for building on understanding, not replacing it.
+
+**No fixed endpoint.** This lane is self-paced and doesn't have to reach any particular module by summer's end. Getting solidly through, say, module 4 with real understanding beats rushing to module 7 with none. Let the pace be theirs.
+
+**They're a minor.** GitHub accounts are allowed at 13+, so 15 is fine, but make sure a parent or guardian knows they're in the program and using GitHub. Keep everything they touch age-appropriate and public-facing-safe.
+
+**The merge point.** Module 7 is where Lane 0 rejoins the main road — the scavenger hunt and first tiny PR are deliberately the same shape as Phase 0 in the main program, just with far more support. When they're comfortable there, they're ready to start picking up real backlog tickets, slowly, with review.
