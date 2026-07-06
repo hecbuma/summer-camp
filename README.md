@@ -9,6 +9,7 @@ A hands-on Ruby on Rails apprenticeship built around the [Neta](https://neta.now
 | File | What it is |
 |---|---|
 | `neta_summer_program.md` | The full program — Week 0 through the capstone, the ticket backlog, concept maps, and coaching notes. |
+| `lane0_foundations.md` | A from-scratch track for total beginners: Ruby from zero, in the terminal, up to a first change on the app. |
 | `week0_setup_and_fundamentals.md` | Step-by-step machine setup for Windows (WSL2, Ruby, Rails, Postgres, git) plus a backend primer and first-PR exercise. |
 | `mockups/` | Reference UI designs for the Phase 1 tickets, in the Neta visual language. |
 | `index.md`, `mockups.md` | The site's landing and design-reference pages. |

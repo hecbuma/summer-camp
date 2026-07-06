@@ -17,6 +17,12 @@ title: Home
     <p>The full arc — Week 0 through the capstone, the ticket backlog, the concept maps, and how the whole thing runs.</p>
   </a>
 
+  <a class="card full" href="{{ '/lane0_foundations.html' | relative_url }}">
+    <span class="num">Total beginner? Start here</span>
+    <h3>Lane 0 — Foundations</h3>
+    <p>Never written a line of code? This is your track — Ruby from scratch, in your own terminal, all the way to your first change on a real app. No experience needed, no rush.</p>
+  </a>
+
   <a class="card" href="{{ '/setup.html' | relative_url }}">
     <span class="num">Start here</span>
     <h3>Week 0 — Setup</h3>
