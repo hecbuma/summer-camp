@@ -299,29 +299,26 @@ Every single piece of Rails maps to something you've already done by hand. That'
 
 ---
 
-## Module 7 — Meet the codebase
+## Where this goes next
 
-You're ready to open Neta — not to understand all of it (nobody does at first), but to find your way around and make one small, real change.
+That's the Foundations lane. If you got here, you've gone from never having written a line of code to understanding how programs work, living in the terminal, and knowing what Rails actually *is* — the Ruby you know, arranged to answer web requests. That's a real base, and it's the exact one the rest of the team started with.
 
-**Scavenger hunt.** With your coach, open the Neta project in your editor. Your mission: find where a specific piece of text on the page comes from. Pick something you saw on the screen — a heading, a button label — and hunt for it in the code. Your editor can search the whole project (`Cmd/Ctrl + Shift + F`). When you find the file that contains that text, you've found where part of the page is built. Poke around the folders. Notice the `models`, `controllers`, and `views` folders — the words you now know.
-
-**Your first real change.** Your coach will pick one tiny, safe thing for you to change — a bit of wording on the page, most likely. You'll:
-
-1. Make a branch for your change.
-2. Find the text (you just practiced this) and edit it.
-3. Save, refresh the page, and see *your* words on the screen.
-4. Commit it, push it, and open a pull request — the same way everyone on the team ships their work.
-
-Your coach will walk you through the git steps the first time. When your change is merged, it's official: you edited a real, running application. That's the moment you've been building toward all summer.
-
-**You can now:** find your way around a real codebase, make a small change, see it live, and ship it like everyone else.
+You're not going to jump straight into the big Neta codebase yet. Next you'll build a tiny Rails app of your own — from nothing, working, in one sitting — so Rails stops being a concept and becomes something your hands have done. That's the **Rails Fundamentals** lane. Head there when you're ready.
 
 ---
 
-## Where this goes
+## For the coach
 
-That's the lane. If you get through all seven modules, you've gone from never having written a line of code to shipping a change to a live Rails app — in one summer, from scratch. That is genuinely impressive, and it's the exact base the rest of the team started with.
+Notes for running Lane 0, kept separate from the learner-facing material above.
 
-Next time around, you're ready to pick up the main work lane with everyone else. But that's later. For now, just work through it one small piece at a time, and enjoy how it feels when something you typed actually runs.
+**Protect momentum above all.** This learner is the most fragile to early discouragement. Celebrate the small wins loudly and genuinely — a working guessing game is a real milestone at this stage. The fastest way to lose them is a stretch of unexplained red errors, so stay close early.
 
----
+**Higher-touch than the other lanes.** Expect shorter, more frequent check-ins than the once-a-week rhythm the others get, and be ready for a bit of the light pairing you were hoping to avoid — especially around modules 6 and 7, where you're the one starting Neta and guiding the first change. That hands-on presence is the point here, not a failure of the model.
+
+**LLMs off, then on — and mean it.** The "turn the AI off" instruction in the learner intro is the single most important rule in this lane. A beginner with an LLM produces working code they understand zero percent of, and *feels* like they learned. Hold the line through module 5 at least. Reintroduce AI tools deliberately once they can read and reason about code on their own — and when you do, make the deal explicit: it's for building on understanding, not replacing it.
+
+**No fixed endpoint.** This lane is self-paced and doesn't have to reach any particular module by summer's end. Getting solidly through, say, module 4 with real understanding beats rushing to module 7 with none. Let the pace be theirs.
+
+**They're a minor.** GitHub accounts are allowed at 13+, so 15 is fine, but make sure a parent or guardian knows they're in the program and using GitHub. Keep everything they touch age-appropriate and public-facing-safe.
+
+**Hands off to Rails Fundamentals.** Lane 0 ends at "From Ruby to the web" — they understand Ruby and grasp what Rails is, but haven't built anything Rails yet. The next lane, **Rails Fundamentals**, is where they build a working scaffold app and then make their first change to Neta. Keep the two lanes in order: Foundations first, Rails Fundamentals second. Don't rush a learner into Rails before the Ruby underneath is solid — a shaky module 5 (methods and objects) makes Rails feel like magic instead of recognition.

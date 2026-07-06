@@ -13,13 +13,9 @@
   --max: 760px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -40,7 +36,6 @@ body {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--taupe-light);
 }
-
 .site-header .bar {
   max-width: var(--max);
   margin: 0 auto;
@@ -50,7 +45,6 @@ body {
   justify-content: space-between;
   gap: 16px;
 }
-
 .brand {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 20px;
@@ -58,17 +52,12 @@ body {
   text-decoration: none;
   letter-spacing: -0.01em;
 }
-
-.brand .dot {
-  color: var(--sienna);
-}
-
+.brand .dot { color: var(--sienna); }
 .nav {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
 }
-
 .nav a {
   font-size: 13px;
   color: var(--taupe);
@@ -77,10 +66,7 @@ body {
   letter-spacing: 0.06em;
   transition: color 0.15s ease;
 }
-
-.nav a:hover {
-  color: var(--sienna);
-}
+.nav a:hover { color: var(--sienna); }
 
 /* ---- Main / prose ---- */
 main {
@@ -89,54 +75,27 @@ main {
   padding: 56px 24px 96px;
 }
 
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4 {
+.prose h1, .prose h2, .prose h3, .prose h4 {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 500;
   color: var(--ink);
   line-height: 1.2;
   margin: 2em 0 0.6em;
 }
-
-.prose h1 {
-  font-size: 2.4rem;
-  margin-top: 0;
-  letter-spacing: -0.02em;
-}
-
+.prose h1 { font-size: 2.4rem; margin-top: 0; letter-spacing: -0.02em; }
 .prose h2 {
   font-size: 1.6rem;
   padding-top: 0.6em;
   border-top: 1px solid var(--taupe-light);
   margin-top: 2.4em;
 }
+.prose h3 { font-size: 1.25rem; }
+.prose h4 { font-size: 1.05rem; font-family: 'Inter', sans-serif; font-weight: 600; }
 
-.prose h3 {
-  font-size: 1.25rem;
-}
+.prose p, .prose li { font-size: 1.02rem; }
 
-.prose h4 {
-  font-size: 1.05rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-}
-
-.prose p,
-.prose li {
-  font-size: 1.02rem;
-}
-
-.prose a {
-  color: var(--sienna);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.prose a:hover {
-  color: var(--sienna-dark);
-}
+.prose a { color: var(--sienna); text-decoration: underline; text-underline-offset: 2px; }
+.prose a:hover { color: var(--sienna-dark); }
 
 /* Card-style links are whole clickable blocks — no prose underline */
 .prose a.card,
@@ -146,10 +105,7 @@ main {
   text-decoration: none;
 }
 
-.prose strong {
-  font-weight: 600;
-  color: var(--ink);
-}
+.prose strong { font-weight: 600; color: var(--ink); }
 
 .prose blockquote {
   margin: 1.6em 0;
@@ -159,10 +115,7 @@ main {
   color: var(--taupe);
   font-style: italic;
 }
-
-.prose blockquote p {
-  margin: 0.4em 0;
-}
+.prose blockquote p { margin: 0.4em 0; }
 
 .prose hr {
   border: none;
@@ -179,7 +132,6 @@ main {
   border-radius: 4px;
   padding: 1px 5px;
 }
-
 .prose pre {
   background: #fdfbf7;
   border: 1px solid var(--taupe-light);
@@ -188,7 +140,6 @@ main {
   overflow-x: auto;
   line-height: 1.55;
 }
-
 .prose pre code {
   background: none;
   border: none;
@@ -204,14 +155,11 @@ main {
   margin: 1.6em 0;
   font-size: 0.95rem;
 }
-
-.prose th,
-.prose td {
+.prose th, .prose td {
   text-align: left;
   padding: 9px 12px;
   border-bottom: 1px solid var(--taupe-light);
 }
-
 .prose th {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
@@ -221,28 +169,17 @@ main {
   color: var(--taupe);
 }
 
-.prose ul,
-.prose ol {
-  padding-left: 1.3em;
-}
-
-.prose li {
-  margin: 0.3em 0;
-}
+.prose ul, .prose ol { padding-left: 1.3em; }
+.prose li { margin: 0.3em 0; }
 
 /* ---- Landing hero ---- */
-.hero {
-  text-align: center;
-  padding: 24px 0 8px;
-}
-
+.hero { text-align: center; padding: 24px 0 8px; }
 .hero .kicker {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: var(--taupe);
 }
-
 .hero h1 {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 500;
@@ -250,7 +187,6 @@ main {
   letter-spacing: -0.02em;
   margin: 10px 0 6px;
 }
-
 .hero .tagline {
   color: var(--taupe);
   font-size: 1.1rem;
@@ -265,12 +201,7 @@ main {
   gap: 16px;
   margin: 40px 0;
 }
-
-@media (min-width: 640px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+@media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
 
 .card {
   display: block;
@@ -281,13 +212,11 @@ main {
   padding: 22px 22px 20px;
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
-
 .card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(28, 28, 28, 0.07);
   border-color: var(--taupe);
 }
-
 .card .num {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
@@ -295,7 +224,6 @@ main {
   color: var(--sienna);
   text-transform: uppercase;
 }
-
 .card h3 {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 500;
@@ -303,17 +231,13 @@ main {
   color: var(--ink);
   margin: 6px 0 6px;
 }
-
 .card p {
   margin: 0;
   color: var(--taupe);
   font-size: 0.95rem;
   line-height: 1.55;
 }
-
-.card.full {
-  grid-column: 1 / -1;
-}
+.card.full { grid-column: 1 / -1; }
 
 /* Mockup links list */
 .mockup-grid {
@@ -322,13 +246,7 @@ main {
   gap: 12px;
   margin: 1.6em 0;
 }
-
-@media (min-width: 640px) {
-  .mockup-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
+@media (min-width: 640px) { .mockup-grid { grid-template-columns: 1fr 1fr; } }
 .mockup-grid a {
   display: block;
   text-decoration: none;
@@ -338,25 +256,9 @@ main {
   padding: 16px 18px;
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
-
-.mockup-grid a:hover {
-  border-color: var(--sienna);
-  transform: translateY(-1px);
-}
-
-.mockup-grid strong {
-  display: block;
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  font-size: 1.1rem;
-  color: var(--ink);
-  margin-bottom: 2px;
-}
-
-.mockup-grid span {
-  font-size: 0.88rem;
-  color: var(--taupe);
-}
+.mockup-grid a:hover { border-color: var(--sienna); transform: translateY(-1px); }
+.mockup-grid strong { display: block; font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.1rem; color: var(--ink); margin-bottom: 2px; }
+.mockup-grid span { font-size: 0.88rem; color: var(--taupe); }
 
 /* ---- Footer ---- */
 .site-footer {
@@ -365,14 +267,5 @@ main {
   padding: 28px 24px 40px;
   color: var(--taupe);
 }
-
-.site-footer .mark {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.1rem;
-}
-
-.site-footer .meta {
-  font-size: 12px;
-  margin-top: 4px;
-}
+.site-footer .mark { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; }
+.site-footer .meta { font-size: 12px; margin-top: 4px; }

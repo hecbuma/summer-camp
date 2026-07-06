@@ -20,7 +20,13 @@ title: Home
   <a class="card full" href="{{ '/lane0_foundations.html' | relative_url }}">
     <span class="num">Total beginner? Start here</span>
     <h3>Lane 0 — Foundations</h3>
-    <p>Never written a line of code? This is your track — Ruby from scratch, in your own terminal, all the way to your first change on a real app. No experience needed, no rush.</p>
+    <p>Never written a line of code? This is your track — Ruby from scratch, in your own terminal, up to the point where you understand what Rails really is. No experience needed, no rush.</p>
+  </a>
+
+  <a class="card full" href="{{ '/rails_fundamentals.html' | relative_url }}">
+    <span class="num">After Foundations</span>
+    <h3>Rails Fundamentals</h3>
+    <p>Build a small working Rails app of your own from nothing, take it apart to see how it fits together, then make your first real change to Neta.</p>
   </a>
 
   <a class="card" href="{{ '/setup.html' | relative_url }}">
