@@ -101,7 +101,9 @@ main {
 .prose a.card,
 .prose a.card:hover,
 .prose .mockup-grid a,
-.prose .mockup-grid a:hover {
+.prose .mockup-grid a:hover,
+.prose .subgrid a,
+.prose .subgrid a:hover {
   text-decoration: none;
 }
 
@@ -238,6 +240,75 @@ main {
   line-height: 1.55;
 }
 .card.full { grid-column: 1 / -1; }
+
+/* Grouped tile (e.g. Fundamentals) — a container card with sub-links inside */
+.group-card {
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--taupe-light);
+  border-radius: 16px;
+  padding: 24px 24px 22px;
+}
+.group-card .num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--sienna);
+  text-transform: uppercase;
+}
+.group-card h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin: 6px 0 6px;
+}
+.group-card > p {
+  margin: 0;
+  color: var(--taupe);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.subgrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 18px 0 0;
+}
+@media (min-width: 640px) { .subgrid { grid-template-columns: repeat(3, 1fr); } }
+
+.subcard {
+  display: block;
+  text-decoration: none;
+  background: var(--parchment);
+  border: 1px solid var(--taupe-light);
+  border-radius: 12px;
+  padding: 16px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.subcard:hover { border-color: var(--sienna); transform: translateY(-1px); }
+.subcard .tag {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sienna);
+}
+.subcard .name {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin: 5px 0 5px;
+}
+.subcard .desc {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--taupe);
+  line-height: 1.45;
+}
 
 /* Mockup links list */
 .mockup-grid {

@@ -17,17 +17,28 @@ title: Home
     <p>The full arc — Week 0 through the capstone, the ticket backlog, the concept maps, and how the whole thing runs.</p>
   </a>
 
-  <a class="card full" href="{{ '/lane0_foundations.html' | relative_url }}">
+  <div class="group-card">
     <span class="num">Total beginner? Start here</span>
-    <h3>Lane 0 — Foundations</h3>
-    <p>Never written a line of code? This is your track — Ruby from scratch, in your own terminal, up to the point where you understand what Rails really is. No experience needed, no rush.</p>
-  </a>
-
-  <a class="card full" href="{{ '/rails_fundamentals.html' | relative_url }}">
-    <span class="num">After Foundations</span>
-    <h3>Rails Fundamentals</h3>
-    <p>Build a small working Rails app of your own from nothing, take it apart to see how it fits together, then make your first real change to Neta.</p>
-  </a>
+    <h3>Fundamentals</h3>
+    <p>Never written a line of code? Build the base from scratch — the language, the framework, and the tool teams use to work together. No experience needed, no rush.</p>
+    <div class="subgrid">
+      <a class="subcard" href="{{ '/lane0_foundations.html' | relative_url }}">
+        <span class="tag">Ruby · start here</span>
+        <span class="name">Foundations</span>
+        <span class="desc">Ruby from scratch, in your own terminal, up to understanding what Rails really is.</span>
+      </a>
+      <a class="subcard" href="{{ '/rails_fundamentals.html' | relative_url }}">
+        <span class="tag">Rails · next</span>
+        <span class="name">Rails Fundamentals</span>
+        <span class="desc">Build a small Rails app of your own, take it apart, then make your first change to Neta.</span>
+      </a>
+      <a class="subcard" href="{{ '/git_fundamentals.html' | relative_url }}">
+        <span class="tag">Git · alongside</span>
+        <span class="name">Git Fundamentals</span>
+        <span class="desc">Saving your work and sharing it — the loop you'll use every time you ship a change.</span>
+      </a>
+    </div>
+  </div>
 
   <a class="card" href="{{ '/setup.html' | relative_url }}">
     <span class="num">Start here</span>

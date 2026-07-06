@@ -25,9 +25,10 @@ You don't have to hold all of Rails in your head. Nobody does. Here's where the 
 - **[Rails Guides](https://guides.rubyonrails.org/)** — the official handbook, written to be read. The **[Getting Started guide](https://guides.rubyonrails.org/getting_started.html)** walks through building a blog from scratch and is the single best companion to this lane. When something here goes quickly, that guide goes slowly and explains why.
 - **[Rails API docs](https://api.rubyonrails.org/)** — the reference for every method Rails gives you. Denser; you grow into it.
 
-And one piece of history worth watching, for fun and context:
+And two videos worth watching — the classic and its modern successor:
 
 - **[How to build a blog in 15 minutes with Rails](https://www.youtube.com/watch?v=Gzj723LkRJY)** — DHH, the creator of Rails, demoing it in 2005. This video is a big part of why Rails took off. It's *old* — the Rails in it is ancient and you shouldn't copy the exact commands — but watch it for the feeling: one person building a working web app astonishingly fast. That feeling is the thing you're about to have yourself.
+- **[Rails 8: The Demo](https://www.youtube.com/watch?v=X_Hw9P1iZfQ)** — DHH again, on the official Rails channel, twenty years later — the same spirit of the classic demo, but on Rails 8, the version you're actually using. Watch this one *after* the original: the idea is identical, the tooling has just moved on. The commands and screens will look much closer to what you're doing in this lane.
 
 ---
 
