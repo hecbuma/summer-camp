@@ -36,7 +36,7 @@ title: Home
       <a class="subcard" href="{{ '/rails_fundamentals.html' | relative_url }}">
         <span class="tag">Rails · next</span>
         <span class="name">Rails Fundamentals</span>
-        <span class="desc">Build a small Rails app of your own, take it apart, then make your first change to Neta.</span>
+        <span class="desc">Build a small Rails app of your own, take it apart, add a feature by hand, then make your first change to Neta.</span>
       </a>
       <a class="subcard" href="{{ '/git_fundamentals.html' | relative_url }}">
         <span class="tag">Git · alongside</span>

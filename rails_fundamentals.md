@@ -97,7 +97,60 @@ Trace one full trip in your head: you visit `/places` → the **route** sends it
 
 ---
 
-## Module 3 — Meet the real codebase
+## Module 3 — Add a feature yourself
+
+So far Rails built the app *for* you and you read what it made. Now you change it — by hand. You're going to give each place a **rating** from 1 to 5. It's a small feature, but it touches almost every layer you just explored, and it's the first time you're adding something to a Rails app on your own. This is the real skill.
+
+The trick for each step: **find how `name` or `note` already does it, and copy that pattern for `rating`.** You practiced reading this code in Module 2 — now you use it.
+
+**1. Add a place to store the rating.** Right now the database has columns for `name` and `note`, but nothing for a rating. You add one with a migration — the same kind of instruction sheet the scaffold made, except this time you're writing it:
+
+```bash
+bin/rails generate migration AddRatingToPlaces rating:integer
+bin/rails db:migrate
+```
+
+Open the file it created under `db/migrate/` and read it — it says "add a `rating` column, holding a whole number, to the places table." Running `db:migrate` made that change real.
+
+**2. Let the form accept the rating.** Open `app/controllers/places_controller.rb` and find the `place_params` method near the bottom. It lists the fields the form is allowed to send — right now `:name` and `:note`. Add `:rating` to that list. (Rails makes you say explicitly which fields are allowed. It's a safety feature — a form can't sneak in fields you didn't approve.)
+
+**3. Add a rating box to the form.** Open `app/views/places/_form.html.erb`. Find the little block that shows the `note` field. Copy its shape for a rating — a label and a number box:
+
+```erb
+<div>
+  <%= form.label :rating %>
+  <%= form.number_field :rating %>
+</div>
+```
+
+**4. Show the rating.** Now find where a place's `note` gets displayed (look in `app/views/places/` — likely `_place.html.erb` or `show.html.erb`). Mirror it to show the rating too, something like:
+
+```erb
+<p>
+  <strong>Rating:</strong>
+  <%= place.rating %>
+</p>
+```
+
+Match whatever pattern the file already uses for `note` — that's why you read the code first.
+
+**5. Try it.** Start the server again (`bin/rails server`), go to `http://localhost:3000/places`, and edit one of your places. There's your rating box. Give it a 5, save, and see it on the page. You just added a feature to a web app — the database, the form, and the display, all wired together by you.
+
+> **The Neta connection:** this is exactly the kind of thing Neta does, just fancier. Neta scores places too — but its scores are computed by an LLM reading reviews, not typed in by hand. You just built the toy version of Neta's whole reason for existing. When you open Neta next, that idea will already be familiar.
+
+**Stretch (optional):** open `app/models/place.rb` and add a rule that a rating has to be between 1 and 5:
+
+```ruby
+validates :rating, inclusion: { in: 1..5 }, allow_nil: true
+```
+
+Now try saving a rating of 9 — Rails will stop you and show an error. You just wrote your first validation, the same way real apps protect their data.
+
+**You can now:** add a new field to a Rails app end to end — migration, controller, form, and display — by reading the existing code and following its pattern.
+
+---
+
+## Module 4 — Meet the real codebase
 
 Now you're ready to open Neta — not to understand all of it (nobody does at first), but to find your way around and make one small, real change. And here's the payoff: it has the exact same folders you just explored in your own app. `models`, `controllers`, `views`, `routes`. You've seen these before. Neta's are bigger and hand-written, but the shape is familiar.
 
