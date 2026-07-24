@@ -33,7 +33,7 @@ A few principles that run through the whole thing:
 
 This program assumes you come in knowing a little programming — some JavaScript, comfortable with basic logic — and no backend experience. That's the starting line everything below is built for.
 
-If you're a **total beginner** — never written a line of code — there's a separate on-ramp for you: **Lane 0 — Foundations**, followed by **Rails Fundamentals**. Together they build the base from scratch — Ruby, then a first Rails app of your own — in the same tools, at your own pace, and merge onto this main road once the code stops looking like noise. Start there instead, and come back to this when you're ready.
+If you're a **total beginner** — never written a line of code — there's a separate on-ramp for you: the **Fundamentals** path. It runs Ruby → Rails → Data → Frontend → Putting It Together → Real Data, building a movie watchlist app you own along the way, with Git alongside throughout. It merges onto this main road once the code stops looking like noise. Start there instead, and come back to this when you're ready.
 
 ---
 

@@ -26,22 +26,42 @@ title: Home
   <div class="group-card">
     <span class="num">Total beginner? Start here</span>
     <h3>Fundamentals</h3>
-    <p>Never written a line of code? Build the base from scratch — the language, the framework, and the tool teams use to work together. No experience needed, no rush.</p>
+    <p>Never written a line of code? Build the base from scratch — the language, the framework, the data underneath, the pages people see, and the workflow a team ships with. No experience needed, no rush.</p>
     <div class="subgrid">
       <a class="subcard" href="{{ '/lane0_foundations.html' | relative_url }}">
-        <span class="tag">Ruby · start here</span>
+        <span class="tag">01 · Ruby</span>
         <span class="name">Foundations</span>
         <span class="desc">Ruby from scratch, in your own terminal, up to understanding what Rails really is.</span>
       </a>
       <a class="subcard" href="{{ '/rails_fundamentals.html' | relative_url }}">
-        <span class="tag">Rails · next</span>
+        <span class="tag">02 · Rails</span>
         <span class="name">Rails Fundamentals</span>
-        <span class="desc">Build a small Rails app of your own, take it apart, add a feature by hand, then make your first change to Neta.</span>
+        <span class="desc">Build a movie watchlist app, take it apart, add a feature by hand.</span>
+      </a>
+      <a class="subcard" href="{{ '/data_fundamentals.html' | relative_url }}">
+        <span class="tag">03 · Data</span>
+        <span class="name">Data Fundamentals</span>
+        <span class="desc">See your real data, query it in the console, connect tables together.</span>
+      </a>
+      <a class="subcard" href="{{ '/frontend_fundamentals.html' | relative_url }}">
+        <span class="tag">04 · Frontend</span>
+        <span class="name">Frontend Fundamentals</span>
+        <span class="desc">ERB, layouts, partials — then style it with Tailwind until you'd show it off.</span>
+      </a>
+      <a class="subcard" href="{{ '/putting_it_together.html' | relative_url }}">
+        <span class="tag">05 · The real thing</span>
+        <span class="name">Putting It Together</span>
+        <span class="desc">Ship a full feature the professional way, then make your first change to Neta.</span>
+      </a>
+      <a class="subcard" href="{{ '/real_data.html' | relative_url }}">
+        <span class="tag">06 · Endgame</span>
+        <span class="name">Real Data</span>
+        <span class="desc">Real posters and live movie data from the internet — Neta's own pattern.</span>
       </a>
       <a class="subcard" href="{{ '/git_fundamentals.html' | relative_url }}">
         <span class="tag">Git · alongside</span>
         <span class="name">Git Fundamentals</span>
-        <span class="desc">Saving your work and sharing it — the loop you'll use every time you ship a change.</span>
+        <span class="desc">Saving your work and sharing it — the loop you'll use every time you ship.</span>
       </a>
     </div>
   </div>

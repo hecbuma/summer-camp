@@ -87,4 +87,4 @@ Everyone gets tangled in Git sometimes — including people who've used it for f
 
 ## Where this fits
 
-You'll use this loop for real in **Rails Fundamentals**, when you make your first change to Neta and open a pull request. Come back to this page any time the commands start to blur together — that muscle memory takes a few rounds to build, and then it's yours for good.
+You'll use this loop for real in **Putting It Together**, when you ship a full feature on your watchlist and then make your first change to Neta. Come back to this page any time the commands start to blur together — that muscle memory takes a few rounds to build, and then it's yours for good.

@@ -303,6 +303,6 @@ Every single piece of Rails maps to something you've already done by hand. That'
 
 That's the Foundations lane. If you got here, you've gone from never having written a line of code to understanding how programs work, living in the terminal, and knowing what Rails actually *is* — the Ruby you know, arranged to answer web requests. That's a real base, and it's the exact one the rest of the team started with.
 
-You're not going to jump straight into the big Neta codebase yet. Next you'll build a tiny Rails app of your own — from nothing, working, in one sitting — so Rails stops being a concept and becomes something your hands have done. That's the **Rails Fundamentals** lane. Head there when you're ready.
+You're not going to jump straight into the big Neta codebase yet. Next you'll build a **movie watchlist** app of your own — from nothing, working, in one sitting — so Rails stops being a concept and becomes something your hands have done. That's the **Rails Fundamentals** lane, and it's the start of a path that runs through data, frontend, and a full professional workflow before you ever open Neta. Head there when you're ready.
 
 ---
